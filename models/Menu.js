@@ -22,7 +22,7 @@ Menu.init(
             allowNull: true,
         },
         time_to_prepare: {
-            type: DataTypes.DATE,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         cost: {
