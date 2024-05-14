@@ -1,5 +1,5 @@
 // import models
-const Requests = require("./Plates");
+const Plates = require("./Plates");
 const Menu = require("./Menu");
 const UserTypes = require("./UserType");
 const Users = require("./User");
@@ -13,4 +13,4 @@ UserTypes.belongsTo(Users, {
     onDelete: "CASCADE"
 });
 
-module.exports = {Requests, Menu, Users, UserTypes };
+module.exports = {Plates, Menu, Users, UserTypes };
