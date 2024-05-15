@@ -21,18 +21,17 @@ const seedMenus = async () => {
         individualHooks: true,
         returning: true,
     });
-    console.log(viewers, "menu seed");
+    console.log(viewers, viewer, "menu seed");
     //what is Plate's relationship to User? 
     const used = await User.bulkCreate(userRecord, {
         individualHooks: true,
         returning: true,
     });
     console.log(used, "hello?");
-    await Plate.create({
+    await Plate.create({ //relationship of Plate to User, UserType, others?
         ...userRecord,
         user_id: userRecord.id
     })
-
     await Restaurant.create({
         ...restaurantItem, ...menuItemOne ,
         //...restaurantItem and ...menuItemOne+...menuItemTwo displayed in SQL
@@ -45,4 +44,3 @@ const seedMenus = async () => {
     })
 }
 seedMenus()
-//module.exports = 
