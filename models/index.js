@@ -7,6 +7,7 @@ const User = require("./User");
 
 //selects Restaurants then Menu (item)
 Restaurant.hasOne(Menu, {foreignKey: "menu_id"});
+User.hasMany(Plate);
 
 
 // Relations

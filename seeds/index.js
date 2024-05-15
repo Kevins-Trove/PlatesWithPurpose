@@ -22,7 +22,8 @@ const seedMenus = async () => {
         returning: true,
     });
     console.log(viewers, viewer, "menu seed");
-    //what is Plate's relationship to User? 
+
+    //user can have many plates
     const used = await User.bulkCreate(userRecord, {
         individualHooks: true,
         returning: true,
@@ -32,6 +33,7 @@ const seedMenus = async () => {
         ...userRecord,
         user_id: userRecord.id
     })
+    
     await Restaurant.create({
         ...restaurantItem, ...menuItemOne ,
         //...restaurantItem and ...menuItemOne+...menuItemTwo displayed in SQL
