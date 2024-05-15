@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Plates, Menu } = require('../../models');
+const requestOrders = require("../../seeds/requests.orders.json");
 
 router.get('/', async (req, res) => {
     
@@ -18,7 +19,7 @@ router.get('/give', async (req, res) => {
 router.get('/order', async (req, res) => {
     
     try {
-        const dbMenuData = await Menu.findAll();
+        const dbMenuData = await Menu.findAll();//found menuItem_List1.json
     
         
         const menuItems = dbMenuData.map((item) =>
@@ -27,7 +28,7 @@ router.get('/order', async (req, res) => {
 
         // Send over the 'loggedIn' session variable to the 'homepage' template
         res.render('order', {
-            menuItems
+            menuItems //in order.handlebars
         });
       } catch (err) {
         console.log(err);

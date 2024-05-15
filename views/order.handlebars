@@ -4,8 +4,8 @@
   </div>
     <h1>Select from our menu</h1>
     <div class="menu-container">
-    {{#each menuItems as |item|}}
-      {{> menu_item_details}}
+    {{#each menuItems as |item|}} <!-- {menuItems} from plate-routes.js line 25 -->
+      {{> menu_item_details}} <!-- description where it got defined? -->
     {{/each}}
     </div>
 </div>
