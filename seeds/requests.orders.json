@@ -1,52 +1,50 @@
 [
     {
         "delivered": true,
-        "address": "1100 NE Broadway",
         "paid_for": false
     },
     {
-        "delivered": "0",
-        "address": "4849 NE 138th Ave",
-        "paid_for": "1"
+        "delivered": false,
+        "paid_for": false
     },
     {
-        "delivered": "0",
-        "address": "14300 SW Barrows Rd",
-        "paid_for": "0"
+        "delivered": false,
+        "paid_for": false
     },
     {
-        "delivered": "1",
-        "address": "20000 Clackamas Hwy, SE Hwy 212",
-        "paid_for": "0"
+        "delivered": true,
+        "paid_for": true
     },
     {
-        "delivered": "0",
-        "address": "221E NE 104th Ave",
-        "paid_for": "1"
+        "delivered": true,
+        "paid_for": false
     },
     {
-        "delivered": "1",
-        "address": "8700 NE Vancouver Mall Dr",
-        "paid_for": "1"
+        "delivered": false,
+        "paid_for": true
     },
     {
-        "delivered": "1",
-        "address": "11945 SW Pacific Hwy",
-        "paid_for": "0"
+        "delivered": true,
+        "paid_for": true
     },
     {
-        "delivered": "0",
-        "address": "2295 SE Tualatin Valley Hwy",
-        "paid_for": "1"
+        "delivered": true,
+        "paid_for": false
     },
     {
-        "delivered": "0",
-        "address": "19133 Willamette Dr",
-        "paid_for": "1"
+        "delivered": false,
+        "paid_for": true
     },
     {
-        "delivered": "1",
-        "address": "11370 SE 82nd Ave",
-        "paid_for": "1"
+        "delivered": false,
+        "paid_for": true
+    },
+    {
+        "delivered": true,
+        "paid_for": true
+    },
+    {
+        "delivered": false,
+        "paid_for": false
     }
 ]
