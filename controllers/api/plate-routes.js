@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plates, Menu } = require('../../models');
+const { Plate, Menu } = require('../../models');
 const requestOrders = require("../../seeds/requests.orders.json");
 
 router.get('/', async (req, res) => {
@@ -44,14 +44,11 @@ router.post('/order', async (req, res) => {
           user_id: req.session.user_id,
         });
     
-        res.status(200).json(newProject);
+        res.status(200).json(newPlate);
       } catch (err) {
         res.status(400).json(err);
       }
 
 })
-
-module.exports = router;
-
 
 module.exports = router;

@@ -9,12 +9,12 @@ router.get('/', async (req, res) => {
   });
 });
 
-router.get('/about-us', async (req, res) => {
+router.get('/contact', async (req, res) => {
   // awaiting handlebar definition
-
-  // res.render('', { 
+  
+  res.render('contact', { 
     
-  // });
+  });
 });
 
 router.get('/login', async (req, res) => {

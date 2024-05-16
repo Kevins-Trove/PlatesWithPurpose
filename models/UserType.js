@@ -31,4 +31,6 @@ UserType.init(
 );
 
 module.exports = UserType;
-
+// User_type 1 = admin
+// User_type 2 = receiver
+// User_type 3 = giver
