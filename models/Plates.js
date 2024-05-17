@@ -12,22 +12,15 @@ Plates.init(
     },
     delivered: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false
     },
-    address: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    paid_for: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
     },
-    city: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    state: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    zipcode: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    date_order: {
+        type: DataTypes.DATE,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
     menu_id: {
         type: DataTypes.INTEGER,

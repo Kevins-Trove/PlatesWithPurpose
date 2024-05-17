@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
 router.get('/give', async (req, res) => {
     try {
-        const dbplatedata = await Orders.findAll();
+        const dbplatedata = await Plates.findAll();
         const orderedPlates = dbplatedata.map((item) => item.get({ plain: true }));
         res.render('give', { orderedPlates });
     } catch (err) {
@@ -30,12 +30,10 @@ router.get('/order', async (req, res) => {
 
 router.post('/order', async (req, res) => {
     try {
-        const {address, city, state, zipcode} = req.body;
+        const {menu_id, user_id} = req.body;
         const newOrder = await Plates.create({
-            address: address,
-            city: city,
-            state: state,
-            zipcode: zipcode
+            menu_id: menu_id,
+            user_id: user_id
         })
         res.status(201).json({message: 'Order created successfully'})
     } catch (error) {
