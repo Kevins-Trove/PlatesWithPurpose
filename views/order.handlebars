@@ -1,11 +1,14 @@
+
+<div class="plate-header">
+<h1>Select from our menu</h1>
+</div>
 <div class="row">
-  <div class="col-12 plate-header" style="color: black">
   
-  </div>
-    <h1>Select from our menu</h1>
-    <div style="color: black" class="menu-container black-text"> <!-- how to change text color? -->
-    {{#each menuItems as |item|}} <!-- {menuItems} from plate-routes.js line 25 -->
-      {{> menu_item_details}} <!-- description where it got defined? -->
+    
+    <div class="menu-container">
+      
+    {{#each menuItems as |item|}}
+      {{> menu_item_details}}
     {{/each}}
     </div>
 </div>
