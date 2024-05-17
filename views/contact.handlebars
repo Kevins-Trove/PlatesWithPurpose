@@ -2,34 +2,29 @@
   <div class="col-12">
      <!--from home-routes.js-->
     <section>
+      <header>
+
+
+
+      </header>
       <h1>Contact Us</h1>
       <h3>To be a recepient or a giver (and earn tax deductions for your contributions), please fill out the following:</h3>
         
     <form class="form" id="login-form">
-    <h6 class="user-error" id="user-error">Please enter your</h6>
-      <div class="form-group">
-        <label>First Name: </label>
-        <input class="form-input" type="text" id="first-name">
-        <label>Last Name: </label>
-        <input class="form-input" type="text" id="last-name">
-        <label>Address (please include city, state and zipcode): </label>
-        <input class="form-input" type="text" id="address">
-        <label>Phone Number: </label>
-        <input class="form-input" type="text" id="phone-number">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
+    <h6 class="user-error" id="user-error">Please enter your information below.</h6>
       <div class="form-group">
         
-        <input type="checkbox" name="checkbox" value="1">
-        Please check if you are a recepient. 
-        {{#if checkbox}} {{bindAttr checkbox checked="isSelected"}}{{/if}} 
-        </input>
-        <button class="btn btn-primary" type="submit">Create Profile</button>
+        <p><label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" /></p>
+                <p><label>Subject </label>
+        <input class="form-input" type="text" id="text-subject"></p>
+      </div>
+      <div class="form-group">
+        <label class="question-input" type="text" id="questions"> Enter your question below:</label>
+        <textarea id="email" name="emailhtml" cols="36" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit Inquiry</button>
       </div>
     </form>    
     </section>
