@@ -23,3 +23,15 @@ pick options to pay for that will then be delivered by us.</h3>
     </div>
   </div>
 </div>
+<section class="orders">
+  <div>
+    <div class="container d-flex flex-row justify-content-center align-items-center">
+
+      {{#each activeOrders as |order|}}
+        {{> active_order_details}}
+      {{/each}}
+
+
+    </div>
+  </div>
+</section>

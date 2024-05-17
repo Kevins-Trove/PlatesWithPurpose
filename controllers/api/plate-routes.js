@@ -28,13 +28,6 @@ router.get('/', async (req, res) => {
 
 });
 
-router.get('/give', async (req, res) => {
-    
-    res.render('give', { 
-    
-    });
-})
-
 router.get('/order', async (req, res) => {
     
     let userData;
