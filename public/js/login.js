@@ -7,21 +7,21 @@ const loginFormHandler = (event) => {
     // Login user
     fetch('/api/user/login', {
         method: 'POST',
-        body: JSON.stringify({ 
-            email, 
+        body: JSON.stringify({
+            email,
             password
-         }),
+        }),
         headers: { 'Content-Type': 'application/json' },
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Could not login user');
-        }
-        return response.json();
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Could not login user');
+            }
+            return response.json();
         })
         .then(newUser => {
             // Redirect to view profile
-             document.location.replace(`/api/user/profile`);
+            document.location.replace(`/api/user/profile`);
         })
         .catch(error => {
             $("#error-message").text(`Error in email or password, please try again`);

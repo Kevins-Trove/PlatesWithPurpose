@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
   try {
 
     const userData = await User.create(req.body);
-       
+  
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -30,7 +30,7 @@ router.get('/profile', async (req, res) => {
 
     if (userData.type == constants.ADMIN){
       isAdmin = true;
-    } else if (userData.type == constants.RECEIEVER) {
+    } else if (userData.type == constants.RECEIVER) {
       isReceiver = true;
     }
 
@@ -42,6 +42,28 @@ router.get('/profile', async (req, res) => {
     res.render('profileCreate');
   }
 
+});
+
+// Route for updating an existing user
+router.put('/profile', async (req, res) => {
+  try {
+    const userId = await User.findByPk(req.session.user_id );
+    const userData = await User.update(req.body, {
+      where: {
+        id: userId,
+      },
+    });
+    res.json(userData);
+
+    if (!userData[0]) {
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 

@@ -5,7 +5,7 @@
 class Constants {
     constructor() {
         this.ADMIN = '1';
-        this.RECEIEVER = '2';
+        this.RECEIVER = '2';
         this.GIVER = '3';
   }
 }
