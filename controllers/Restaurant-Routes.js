@@ -3,6 +3,7 @@ const router = require('express').Router();
 const Restaurants = require("../models/Restaurants");
 const Menu = require("../models/Menu");
 const menuItems = require("../seeds/menuItem_List1.json");//program to run data
+const restaurantList = require("../seeds/restaurants.json");//not finding the restaurants.json
 
     router.get("/:id", async (req, res) => { // "/:id" is the specific restaurant
         try {
@@ -33,7 +34,7 @@ const menuItems = require("../seeds/menuItem_List1.json");//program to run data
             const menuInquiry = menuSelection.map((menu)=>{
                 return menu.get({ plain: true });
             });
-            console.log(menuInquiry);
+            //console.log(menuInquiry);
             res.render("restaurant", {menuInquiry});
         } catch(error) {
             console.error(error);

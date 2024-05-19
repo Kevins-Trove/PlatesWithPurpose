@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const {Contact} = require("../models/index");
 
 // Landing page
 router.get('/', async (req, res) => {
@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
 
 router.get('/contact', async (req, res) => {
   // awaiting handlebar definition
-  
+  const userData = await Contact.findAll();
+  console.log(userData);
   res.render('contact', { 
     
   });
