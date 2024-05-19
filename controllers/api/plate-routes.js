@@ -139,7 +139,7 @@ router.get('/give', async (req, res) => {
 
       if (userData.type == constants.ADMIN){
           isAdmin = true;
-        } else if (userData.type == constants.RECEIEVER) {
+        } else if (userData.type == constants.RECEIVER) {
           isReceiver = false;
         }
   } else {
@@ -152,10 +152,10 @@ router.get('/give', async (req, res) => {
       const activeOrders = dbOrderData.map((item) =>
       item.get({plain: true}))
 
+      console.log(dbOrderData);
       res.render('give', {
           activeOrders, userData, logged_in: true, isAdmin, isGiver: !isReceiver
       });
-      console.log(activeOrders);
   } catch (err) {
       console.error(err);
       res.status(400).json(err);
