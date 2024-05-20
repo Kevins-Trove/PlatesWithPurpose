@@ -50,6 +50,7 @@ const profileFormHandler = (event) => {
 const updateUserFormHandler = (event) => {
     event.preventDefault();
 
+    const id = document.querySelector('#id').value.trim();
     const firstName = document.querySelector('#first-name-update').value.trim();
     const lastName = document.querySelector('#last-name-update').value.trim();
     const address = document.querySelector('#address-update').value.trim();
@@ -64,7 +65,7 @@ const updateUserFormHandler = (event) => {
     var userType = selectedRadio.value;
 
     // Update user profile
-    fetch('/api/user', {
+    fetch(`/api/user/profile/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             firstName,
@@ -82,23 +83,31 @@ const updateUserFormHandler = (event) => {
             'Content-Type': 'application/json',
         },
     })
-    .then((response) => {
-        if (response.ok) {
-            document.location.replace('/profile');
+    .then(response => response.json().then(data => ({
+            status: response.status,
+            body: data
+        }))
+    )
+    .then(obj => {
+        if (obj.status === 200) {
+            alert('Profile Is Updated');
+            document.location.replace(`/api/user/profile`); // Redirect to profile page on success
         } else {
-            console.log("FAILED");
-            console.log(JSON.stringify(response.json()));
-            //alert('Failed to update user');
+            alert(`Failed to update user: ${obj.body.message}`); // Display detailed error message
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
     });
 };
 
-const profileForm = document.querySelector('.profile-form');
+const profileForm = document.querySelector('#create-user-form');
 if (profileForm) {
     profileForm.addEventListener('submit', profileFormHandler);
 }
 
-const updateProfileForm = document.querySelector('.update-profile-form');
+const updateProfileForm = document.querySelector('#update-user-form');
 if (updateProfileForm) {
     updateProfileForm.addEventListener('submit', updateUserFormHandler);
 }

@@ -44,25 +44,22 @@ router.get('/profile', async (req, res) => {
 
 });
 
-// Route for updating an existing user
-router.put('/profile', async (req, res) => {
+/// Route for updating an existing user
+router.put('/profile/:id', async (req, res) => {
+  const { id } = req.params; // get id from url param
   try {
-    const userId = await User.findByPk(req.session.user_id );
-    const userData = await User.update(req.body, {
-      where: {
-        id: userId,
-      },
+    const userData = req.body; // this is the new field data sent from the profileView
+    const [updated] = await User.update(userData, {
+      where: { id } 
     });
-    res.json(userData);
 
-    if (!userData[0]) {
-      res.status(404).json({ message: 'No user found with this id!' });
-      return;
+  if (updated > 0) {
+      res.json({ message: 'User updated successfully' });
+    } else {
+      res.status(404).json({ message: 'User not found' });
     }
-
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to update user due to an error', error: error.toString() }); // give me an error json
   }
 });
 

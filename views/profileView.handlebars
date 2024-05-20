@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 login-container">
         <h2 class="login-title">User Profile</h2>
-        <form class="form update-profile-form">
+        <form class="form update-profile-form" id="update-user-form">
             <div class="form-group">
                 <label for="giver">Giver</label>
                 <input type="radio" id="giver-signup" name="role" value="3" {{#if isGiver}} checked="checked" {{/if}}>
@@ -9,37 +9,38 @@
                 <input type="radio" id="receiver-signup" name="role" value="2" {{#if isReceiver}} checked="checked"
                     {{/if}}>
             </div>
+                <input class="form-input" type="hidden" value="{{userData.id}}" name="id" id="id" />
             <div class="form-group">
                 <label for="first-name-update">First Name:</label>
-                <input class="form-input" type="text" id="first-name-update" value="{{userData.firstName}}" required />
+                <input class="form-input" type="text" id="first-name-update" value="{{userData.firstName}}" />
             </div>
             <div class="form-group">
                 <label for="last-name-update">Last Name:</label>
-                <input class="form-input" type="text" id="last-name-update" value="{{userData.lastName}}" required />
+                <input class="form-input" type="text" id="last-name-update" value="{{userData.lastName}}" />
             </div>
             <div class="form-group">
                 <label for="address-update">Address:</label>
-                <input class="form-input" type="text" id="address-update" value="{{userData.address}}" required />
+                <input class="form-input" type="text" id="address-update" value="{{userData.address}}" />
             </div>
             <div class=" form-group">
                 <label for="city-update">City:</label>
-                <input class="form-input" type="text" id="city-update" value="{{userData.city}}" required />
+                <input class="form-input" type="text" id="city-update" value="{{userData.city}}" />
             </div>
             <div class="form-group">
                 <label for="state-update">State:</label>
-                <input class="form-input" type="text" id="state-update" value="{{userData.state}}" required />
+                <input class="form-input" type="text" id="state-update" value="{{userData.state}}" />
             </div>
             <div class="form-group">
                 <label for="zip-update">Zip Code:</label>
-                <input class="form-input" type="text" id="zip-update" value="{{userData.zip}}" required />
+                <input class="form-input" type="text" id="zip-update" value="{{userData.zip}}" />
             </div>
             <div class="form-group">
                 <label for="phone-update">Phone Number:</label>
-                <input class="form-input" type="text" id="phone-update" value="{{userData.phone}}" required />
+                <input class="form-input" type="text" id="phone-update" value="{{userData.phone}}" />
             </div>
             <div class="form-group">
                 <label for="email-update">Email:</label>
-                <input class="form-input" type="email" id="email-update" value="{{userData.email}}" required />
+                <input class="form-input" type="email" id="email-update" value="{{userData.email}}" />
             </div>
             <div class="form-group">
                 <label for="password-update">Password (Minimum 6 characters):</label>
