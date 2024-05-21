@@ -34,6 +34,11 @@ Plates With Purpose is an innovative platform that acts as a cross between a foo
 ## Credits 
   
   This project relies on the NodeJS ecosystem and we greatfully thank the developers of these libraries for their contributions to the open-source community! 
+  Trusty collaborators on this project include:
+ - Calvin Yue: [https://github.com/calvinyueWillTry]
+ - Rueben Villalobos: [https://github.com/Rubenvill0811]
+ - Kevin Roper: [https://github.com/Kevins-Trove]
+ - Joseph Collins: [https://github.com/collinsjosephj]
 
 ## License 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
