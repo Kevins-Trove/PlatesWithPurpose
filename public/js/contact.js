@@ -1,4 +1,3 @@
-//const { Model, DataTypes } = require('sequelize');
 
 
 const contactForm = document.querySelector("#inquiry-form");
@@ -15,44 +14,54 @@ contactForm.addEventListener("submit", function(event) {
         inquire: textInput
     }; console.log(formSectionData);
 
-    fetch("/api/contact", { //  /api/contact
+    fetch("/api/contact", { //  /api/email/log
         method: 'POST', //post to inquiry.json? 
         body: JSON.stringify(formSectionData),
         headers: { 'Content-Type': 'application/json' },
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Could not create user');
+            throw new Error('Could not create log');
         }
         return response.json();
         })
-        .then(newInquiry => {
-            console.log(newInquiry);
+        .then(newUser => {
             // Redirect to view profile
-             //document.location.replace(`/api/email/thankyou`);
-            fetch(`/api/email/thankyou`, {
-                method: 'GET',
-            })
+           document.location.href("/api/email/thankyou");
         })
         .catch(error => {
-            $("#error-message").text(`Error, please try again`);
+            $("#error-message").text(`Error creating log`);
+        });
+
+
+    // const emailInputted = document.querySelector('#emailInquiry').value.trim();
+    // const subject = document.querySelector('#textSubject').value.trim();
+    // const textInput = document.querySelector('#inquire').value.trim();
+    
+       
+
+    fetch("/api/email/contact", { //  /api/contact
+        method: 'POST',
+        body: JSON.stringify({
+            email: emailInputted,
+            subject: subject,
+            text: textInput,
+            html: textInput
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    })    
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Could not send email');
+        }
+        return response.json();
+        })
+        .then(response => {
+            document.location.replace(`/api/email/thankyou`);
+            return; 
+            
+        })
+        .catch(error => {
+            $("#error-message").text(`Error in email or password, please try again`);
         });
 });
-contactForm;
-//document.querySelector('#inquiry-form').addEventListener("submit", contactForm);
-// // How to create a file out of the data
-// const formStored = (formData, filename) => {
-//     const blob = new Blob([JSON.stringify(formData)], { type: 'application/json' });
-//     const url = URL.createObjectURL(blob);
-//     const a = document.createElement('a');
-//     a.href = url;
-//     // Set the filename for the downloaded file
-//     a.download = filename + '.json';
-//     // Append the anchor element to the document body
-//     document.body.appendChild(a);
-//     // Click the anchor element to trigger the download
-//     a.click();
-//     // Clean up by removing the anchor element
-//     document.body.removeChild(a);
-// };
-// formStored({ test: 'is passed' }, 'testJsonFile');
