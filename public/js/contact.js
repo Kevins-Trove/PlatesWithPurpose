@@ -14,8 +14,8 @@ contactForm.addEventListener("submit", function(event) {
         inquire: textInput
     }; console.log(formSectionData);
 
-    fetch("/api/contact", { //  /api/email/log
-        method: 'POST', //post to inquiry.json? 
+    fetch("/api/contact", {
+        method: 'POST', 
         body: JSON.stringify(formSectionData),
         headers: { 'Content-Type': 'application/json' },
     })
