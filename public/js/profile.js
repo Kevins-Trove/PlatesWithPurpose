@@ -110,12 +110,10 @@ if (profileForm) {
 const updateProfileForm = document.querySelector('#update-user-form');
 if (updateProfileForm) {
     updateProfileForm.addEventListener('submit', updateUserFormHandler);
+    
 }
 
 
-/*document.querySelector('.profile-form').addEventListener('submit', profileFormHandler);
-document.querySelector('.update-profile-form').addEventListener('submit', updateUserFormHandler);
-*/
 
 
 
