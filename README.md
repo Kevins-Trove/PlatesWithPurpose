@@ -21,7 +21,7 @@ Plates With Purpose is an innovative platform that acts as a cross between a foo
  - **Collaboration with Restaurants:** By collaborating with restaurants, we aim to increase the variety and quantity of food items available on our platform, further enhancing our ability to serve the community.
  - **Reduction of Food Waste:** Our ultimate goal is to contribute to the reduction of food waste going into landfills by redirecting surplus food from restaurants to those who need it most.
 ## Deployment
-
+<img width="1440" alt="Screenshot 2024-05-20 at 20 57 10" src="https://github.com/Kevins-Trove/PlatesWithPurpose/assets/156174614/d90445b9-9b3c-4474-9a14-5e938f0ba315">
 ## Installation 
  You can clone the respsitory 
 
