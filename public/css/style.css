@@ -364,3 +364,19 @@ width: 50%;
     font-size: 10rem;
   }
 }
+.thankyou {
+  font-size: 80px;
+  display: flex;
+  flex-direction: row;
+  flex: content;
+  justify-content: center;
+  color:black
+}
+.replyback {
+  font-size: 80px;
+  display: flex;
+  flex-direction: row;
+  flex: content;
+  justify-content: center;
+  color:black
+}

@@ -26,12 +26,16 @@ contactForm.addEventListener("submit", function(event) {
         }
         return response.json();
         })
-        .then(newUser => {
+        .then(newInquiry => {
+            console.log(newInquiry);
             // Redirect to view profile
-             document.location.replace(`/api/user/profile`);
+             //document.location.replace(`/api/email/thankyou`);
+            fetch(`/api/email/thankyou`, {
+                method: 'GET',
+            })
         })
         .catch(error => {
-            $("#error-message").text(`Error in email or password, please try again`);
+            $("#error-message").text(`Error, please try again`);
         });
 });
 contactForm;
