@@ -7,3 +7,4 @@ const seedUsers = async () => {
 }
 
 seedUsers();
+//json is test temporary data, that's not being used for part of the app process

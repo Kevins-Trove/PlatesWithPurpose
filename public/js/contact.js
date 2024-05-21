@@ -15,15 +15,11 @@ contactForm.addEventListener("submit", function(event) {
         inquire: textInput
     }; console.log(formSectionData);
 
-    fetch("/contact", { //  /api/contact
-        method: 'POST',
-        body: JSON.stringify({
-            emailInquiry,
-            textSubject,
-            inquire
-        }),
+    fetch("/api/contact", { //  /api/contact
+        method: 'POST', //post to inquiry.json? 
+        body: JSON.stringify(formSectionData),
         headers: { 'Content-Type': 'application/json' },
-    })    
+    })
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not create user');
@@ -38,7 +34,7 @@ contactForm.addEventListener("submit", function(event) {
             $("#error-message").text(`Error in email or password, please try again`);
         });
 });
-contactForm();
+contactForm;
 //document.querySelector('#inquiry-form').addEventListener("submit", contactForm);
 // // How to create a file out of the data
 // const formStored = (formData, filename) => {
