@@ -1,0 +1,50 @@
+[
+    {
+        "delivered": true,
+        "paid_for": false
+    },
+    {
+        "delivered": false,
+        "paid_for": false
+    },
+    {
+        "delivered": false,
+        "paid_for": false
+    },
+    {
+        "delivered": true,
+        "paid_for": true
+    },
+    {
+        "delivered": true,
+        "paid_for": false
+    },
+    {
+        "delivered": false,
+        "paid_for": true
+    },
+    {
+        "delivered": true,
+        "paid_for": true
+    },
+    {
+        "delivered": true,
+        "paid_for": false
+    },
+    {
+        "delivered": false,
+        "paid_for": true
+    },
+    {
+        "delivered": false,
+        "paid_for": true
+    },
+    {
+        "delivered": true,
+        "paid_for": true
+    },
+    {
+        "delivered": false,
+        "paid_for": false
+    }
+]

@@ -18,7 +18,7 @@ Plates.init(
         type: DataTypes.BOOLEAN,
         defaultValue: false
     },
-    date_order: {
+    date_order: { //is this automatically built in?
         type: DataTypes.DATE,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
