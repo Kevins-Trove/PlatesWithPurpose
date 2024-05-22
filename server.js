@@ -12,10 +12,8 @@ const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({ helpers });
 
 
-
-
 const sess = {
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || "this is test",
   cookie: {},
   resave: false,
   saveUnitialized: true,
@@ -35,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);//resturants starts here
+app.use(routes);
 
 
 sequelize.sync({ force: false }).then(() => {
