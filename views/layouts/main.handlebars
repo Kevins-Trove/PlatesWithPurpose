@@ -43,14 +43,14 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
-           {{#if userData.isReceiver}}
+           {{#if isReceiver}}
                        <li class="nav-item">
               <a class="nav-link" href="/api/plate/order">Order a Plate</a>
             </li>
 
 
           {{/if}}
-           {{#if userData.isGiver}}
+           {{#if isGiver}}
            <li class="nav-item">
               <a class="nav-link" href="/api/plate/give">Give a Plate</a>
             </li>
