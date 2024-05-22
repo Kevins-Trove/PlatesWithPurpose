@@ -3,7 +3,7 @@
 const sequelize = require("../config/connection");
 const {Menu, Restaurant, Plate, User} = require("../models");
 const menuItemOne = require("./menuItem_List1.json");
-const menuItemTwo = require("./menuItem_List2.json");
+//const menuItemTwo = require("./menuItem_List2.json");
 const restaurantItem = require("./restaurants.json");
 let userRecord = require("./user.requests.json");
 
@@ -18,10 +18,10 @@ const seedMenus = async () => {
         individualHooks: true,
         returning: true,
     })
-    const viewer = await Menu.bulkCreate(menuItemTwo, { //where to call this?
-        individualHooks: true,
-        returning: true,
-    });
+    // const viewer = await Menu.bulkCreate(menuItemTwo, { //where to call this?
+    //     individualHooks: true,
+    //     returning: true,
+    // });
     //console.log(viewers, viewer, "menu seed");
 
     //user can have many plates
@@ -40,10 +40,10 @@ const seedMenus = async () => {
         //...restaurantItem and ...menuItemOne+...menuItemTwo displayed in SQL
         user_id: viewers.id
     })
-    await Restaurant.create({
-        ...restaurantItem, ...menuItemTwo,
-        //...restaurantItem and ...menuItemOne+...menuItemTwo displayed in SQL
-        user_id: chosen.id
-    })
+    // await Restaurant.create({
+    //     ...restaurantItem, ...menuItemTwo,
+    //     //...restaurantItem and ...menuItemOne+...menuItemTwo displayed in SQL
+    //     user_id: chosen.id
+    // })
 }
 seedMenus()
