@@ -1,32 +1,15 @@
 // import models
-//const Restaurant = require("./Restaurants");
 const Plate = require("./Plates");
 const Menu = require("./Menu");
-//const UserType = require("./UserType");
 const User = require("./User");
-const Contact = require("./contact");
-
-//selects Restaurants then Menu (item)
-//Restaurant.hasOne(Menu, {foreignKey: "menu_id"});
 const EmailLog = require("./EmailLog");
 
 // Relations
-// Categories have many Products
-Plate.hasMany(User, {
-    foreignKey: 'user_id',
-  });
-  
- User.belongsTo(Plate, {
-    foreignKey: 'user_id',
-  });
+// Products belongsTo Category
+User.hasMany(Plate);
+Plate.belongsTo(User);
 
-  Plate.hasMany(Menu, {
-    foreignKey: 'menu_id',
-  });
-  
- Menu.belongsTo(Plate, {
-    foreignKey: 'menu_id',
-  });
-  
-  
+Menu.hasMany(Plate);
+Plate.belongsTo(Menu);
+
 module.exports = {Plate, Menu, User, EmailLog};
