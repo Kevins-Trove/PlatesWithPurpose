@@ -175,7 +175,23 @@ margin-right: 50px;
   width: 100%;
   
 }
-
+.nav-item {
+  position: absolute;
+  margin-left: 35%;
+}
+.nav_item {
+  position: absolute;
+  margin-left: 47%;
+}
+.nav-link {
+  color: white;
+}
+.dropdown-menu {
+  background-color: burlywood;
+}
+.nav-link{
+  color: white;
+}
 .menu-container {
 display: flex;
 flex-wrap: wrap;
@@ -361,6 +377,10 @@ width: 50%;
   z-index: 500;
 }
 
+.navbar {
+  
+  color: white;
+}
 
 @media (max-width: 991px) {
      

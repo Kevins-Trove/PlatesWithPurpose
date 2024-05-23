@@ -20,9 +20,9 @@
 </head>
 
 <body>
-  <header>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll navbar-header">
+  {{!--<header>
+     <nav class="navbar navbar-expand-lg fixed-top navbar-scroll navbar-header">
     <div class="container-fluid">
       <img class="logo" src="/images/PwP_logo.png">
          <div class="dropdown">
@@ -47,18 +47,12 @@
                        <li class="nav-item">
               <a class="nav-link" href="/api/plate/order">Order a Plate</a>
             </li>
-
-
           {{/if}}
            {{#if isGiver}}
            <li class="nav-item">
               <a class="nav-link" href="/api/plate/give">Give a Plate</a>
             </li>
-
           {{/if}}
-          
-
-
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact Us</a>
           </li>
@@ -69,7 +63,6 @@
                  </a>
                 <br>
                 <p class="User" id="logout">Logout</p>
-              
                <script src="/js/logout.js"></script>
             {{else}}
             <a href="/login" class="user-circle">
@@ -77,13 +70,70 @@
                 <p class="noUser">Login</p>
               </a>
             {{/if}}
-        
       </div>
     </div>
-  </nav>
+  </nav> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/api/user/login">Login</a>
+          <a class="dropdown-item" href="/contact">Contact</a>
+          <a class="dropdown-item" href="/">Home</a>
+        </div> --}}
   <!-- Navbar -->
-
- 
+  <!--collapsenav-->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll navbar-header">
+  <div class="container-fluid">
+    <img class="logo" src="/images/PwP_logo.png">
+    
+  <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    <i class="fas fa-bars">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" aria-labelledby="navbarDropdownMenuLink">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+      </li>
+    </i>
+  </button>
+  <!-- These show up when the above is in the <i>. The following are  -->
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      
+      <li class="nav_item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+    </ul>
+    <div>
+      {{#if isReceiver}}
+                       <li class="nav-item">
+              <a class="nav-link" href="/api/plate/order">Order a Plate</a>
+            </li>
+          {{/if}}
+           {{#if isGiver}}
+           <li class="nav-item">
+              <a class="nav-link" href="/api/plate/give">Give a Plate</a>
+            </li>
+          {{/if}}
+          
+        </ul>
+        {{#if logged_in}}
+              <a href="/api/user/profile" class="user-circle">
+                <i class="fas fa-user loggedIn"></i>
+                 </a>
+                <br>
+                <p class="User" id="logout">Logout</p>
+               <script src="/js/logout.js"></script>
+            {{else}}
+            <a href="/login" class="user-circle">
+                <i class="fas fa-user loggedOut"></i>
+                <p class="noUser">Login</p>
+              </a>
+            {{/if}}
+    </div>
+  </div>
+  </div>
+</nav>
+   <!--collapsenav-->
 </header>
 
     <main class="container container-fluid col-12">
