@@ -90,7 +90,7 @@ const updateUserFormHandler = (event) => {
         if (obj.status === 200) {
             document.location.replace(`/api/user/profile`); // Redirect to profile page on success
         } else {
-            alert(`Failed to update user: ${obj.body.message}`); // Display detailed error message
+            alert(`Failed to update user as no changes were made!`); // Display detailed error message " User not found"
         }
     })
     .catch(error => {

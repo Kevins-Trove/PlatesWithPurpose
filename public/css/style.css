@@ -1,3 +1,16 @@
+.a {
+  font-family: "Freeman", sans-serif;
+}
+
+body {
+  background-image: url("../images/food.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  height: 100vh;
+}
+
 .video-container {
   position: relative;
   width: 100%;
@@ -119,12 +132,9 @@ video {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  
-  
   top: 200px;
   width: 100%;
   z-index: 500;
-  
 }
 
 .login-form {
@@ -154,7 +164,38 @@ padding: 5px;
 width: 100%;
 }
 
+h2.login-title, label, a.nav-link {
+  font-family: "Freeman", sans-serif;
+  font-weight: large;
+}
 
+a.nav-link {
+  font-weight: bolder;
+}
+
+.btn-primary {
+  transition-duration: 0.4s;
+  background-color: gray;
+  border: 2px solid black;
+}
+
+.btn-primary:hover {
+  background-color: #04AA6D !important;
+  color: white;
+}
+
+a.nav-link:hover {
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+}
+
+
+p#logout.User {
+  cursor: pointer;
+  padding: 3px;
+  font-weight: bold;
+}
 
 .logo {
 width: 210px;
@@ -222,8 +263,6 @@ display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 margin: 10px
-
-
 }
 
 .menu-item-card h6 {
@@ -236,7 +275,6 @@ flex-wrap: wrap;
 flex-direction: column;
 align-items: center;
 padding-bottom: 20px;
-
 }
 
 .menu-footer h6.wait-time {
@@ -272,6 +310,9 @@ width: 50%;
   width: 100%;
 }
 
+#logout.User {
+  font-weight: bold;
+}
 
 .login-form {
   display: flex;
@@ -297,7 +338,6 @@ width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
- 
   background-color: rgba(255, 255, 255, 1);
   width: 100%;
 }
@@ -341,8 +381,6 @@ width: 50%;
 .menu-image {
   width: 100%;
   overflow: hidden;
-
-
 }
 
 .user-item-card {
@@ -360,7 +398,6 @@ width: 50%;
 
 
 @media (max-width: 991px) {
-     
   .navbar-scroll .navbar-brand,
   .navbar-scroll .nav-link,
   .navbar-scroll .fa-bars {
